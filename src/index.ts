@@ -40,6 +40,7 @@ processMessage = async message => {
     }
 
     let message = {
+    clientUrl: file.url,
     mediaKey: file.mediaKey.toString('base64'),
     filehash: file.fileSha256,
     mimetype: file.mimetype,
