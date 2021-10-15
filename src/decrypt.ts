@@ -73,7 +73,7 @@ export const decryptMedia :  (file: DecryptableMessage | boolean, useragentOverr
   let res: any;
   try {
     while (haventGottenImageYet) {
-      res = await axios.get(message.clientUrl.trim(), options);
+      res = await axios.get(message.clientUrl, options);
       if (res.status == 200) {
         haventGottenImageYet = false;
       } else if (res.status == 404) {

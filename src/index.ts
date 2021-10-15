@@ -5,7 +5,7 @@ const fs = require('fs');
 export class Decrypta {
 processMessage = async message => {
     if (message.mimetype) {
-      const filename = `${message.t}.${mime.extension(message.mimetype)}`;
+      const filename = `${message.mediaKeyTimestamp}.${mime.extension(message.mimetype)}`;
       const mediaData = await decryptMedia(message);
       const imageBase64 = `data:${message.mimetype};base64,${mediaData.toString(
         'base64'

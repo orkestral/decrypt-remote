@@ -1,6 +1,6 @@
 {
   "name": "decrypt-remote",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Decrypt remote for superchats",
   "main": "./dist/index.js",
   "types": "dist/decrypt.d.ts",
