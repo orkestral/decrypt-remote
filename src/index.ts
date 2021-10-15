@@ -2,8 +2,8 @@ import { decryptMedia } from './decrypt';
 const mime = require('mime-types');
 const fs = require('fs');
 
-
-const processMessage = async message => {
+export class Decrypta {
+processMessage = async message => {
     if (message.mimetype) {
       const filename = `${message.t}.${mime.extension(message.mimetype)}`;
       const mediaData = await decryptMedia(message);
@@ -20,7 +20,7 @@ const processMessage = async message => {
   }
 
 
-export function decrypt(file){
+ decrypt(file){
 
     let typee = file.mimetype.split('/')[0]
 
@@ -47,5 +47,6 @@ export function decrypt(file){
     size: file.fileLength.low
     }
 
-    return processMessage(message)
+    return this.processMessage(message)
+}
 }
